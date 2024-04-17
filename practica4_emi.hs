@@ -59,7 +59,7 @@ sumatoria1 n | n == 0 = 1
              | otherwise = 2^n + sumatoria1 (n-1)
 -------------------------------------------------------------
 --ejercicio 10_b
-sumatoria2 :: Integer -> Float -> Float
+sumatoria2 :: Integer -> Integer -> Integer
 sumatoria2 n m | n == 1 = m 
                | otherwise = m^n + sumatoria2 (n-1) m
 --------------------------------------------------------------
@@ -95,6 +95,23 @@ sumatoriaDoble :: Integer -> Integer -> Integer
 sumatoriaDoble n m  | n == 1 = m 
                     | m == 1 = sumatoriaAux n
                     | otherwise  = n ^ m + sumatoriaDoble n (m - 1) + (sumatoriaDoble (n-1) m) - sumatoriaDoble (n-1) (m-1)
+
+sumatoriaDoble1 :: Integer -> Integer -> Integer
+sumatoriaDoble1 n m | n == 1 = (sumatoria2 n m)
+                    | otherwise = (sumatoria2 n m) + (sumatoriaDoble1 (n-1) m)
 ----------------------------------------------------------------
 --ejercicio 14
+--sumaPotencias :: Integer -> Integer -> Integer -> Integer
+--sumaPotencias q n m | 
+--                    | otherwise = q ^ (n+m) + sumaPotencias q sumatoria2(q n) (m-1)
+--sumaPotenciasAux :: Integer -> Integer -> Integer
+--sumaPotenciasAux n m | n 
+-----------------------------------------------------------------
+--ejercicio 16
+menorDivisor :: Integer -> Integer
+menorDivisor n = menorDivisorDesde 2 n
+menorDivisorDesde :: Integer -> Integer -> Integer
+menorDivisorDesde m n | mod n m == 0 = m
+                      | otherwise = menorDivisorDesde (m+1) n
+------------------------------------------------------------------
 
