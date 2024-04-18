@@ -107,11 +107,25 @@ sumatoriaDoble1 n m | n == 1 = (sumatoria2 n m)
 --sumaPotenciasAux :: Integer -> Integer -> Integer
 --sumaPotenciasAux n m | n 
 -----------------------------------------------------------------
---ejercicio 16
+--ejercicio 16a
 menorDivisor :: Integer -> Integer
 menorDivisor n = menorDivisorDesde 2 n
 menorDivisorDesde :: Integer -> Integer -> Integer
 menorDivisorDesde m n | mod n m == 0 = m
                       | otherwise = menorDivisorDesde (m+1) n
+------------------------------------------------------------------
+--ejercicio 16b
+esPrimo :: Integer -> Bool
+esPrimo n | menorDivisor n == n = True
+          | otherwise = False
+------------------------------------------------------------------
+--ejercicio 16c
+sonCoprimos :: Integer -> Integer -> Bool
+sonCoprimos n m | n == m = False
+                | menorDivisor n == menorDivisor m = False
+                | (esPrimo n) && ((menorDivisor m) /= n)  = True
+                | n > m =  sonCoprimos (div n (menorDivisor n)) m 
+                | n < m = sonCoprimos n (div m (menorDivisor m))
+                | otherwise = True
 ------------------------------------------------------------------
 
