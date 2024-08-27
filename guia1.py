@@ -117,13 +117,26 @@ def especie_promedio_mas_inclinada(lista_arboles):
     return (hola,maximo)
 import pandas as pd
 arboles_veredas='arbolado-publico-lineal-2017-2018.csv'
-df_veredas=pd.read_csv(arboles_veredas)
-data_arboles_veredas=df_veredas[['nombre_cientifico', 'ancho_acera', 'diametro_altura_pecho','altura_arbol']]
-print(data_arboles_veredas)
-#ejercicio 8
-df_nuevo=arboles_veredas.copy()
-df_nuevo2=nombre_archivo.copy()
+# Cargar los datos de los parques y veredas
+df_arboles = pd.read_csv(nombre_archivo)
+df_veredas = pd.read_csv(arboles_veredas)
 
+# Renombrar las columnas en el DataFrame de parques para que coincidan con las del DataFrame de veredas
+df_arboles.rename(columns={'altura_tot': 'altura_arbol', 'diametro': 'diametro_altura_pecho'}, inplace=True)
+# Crear copias de los DataFrames con las columnas seleccionadas
+df_tipas_parques = df_arboles[['diametro_altura_pecho', 'altura_arbol']].copy()
+df_tipas_veredas = df_veredas[['diametro_altura_pecho', 'altura_arbol']].copy()
+print((df_arboles[['diametro_altura_pecho','altura_arbol']]).head())
+# Imprimir los DataFrames resultantes
+print("Datos de parques:")
+print(df_tipas_parques.head())
+
+print("\nDatos de veredas:")
+print(df_tipas_veredas.head())
+
+#df_veredas=pd.read_csv(arboles_veredas)
+#data_arboles_veredas=df_veredas[['nombre_cientifico', 'ancho_acera', 'diametro_altura_pecho','altura_arbol']]
+#print(data_arboles_veredas)
 #lista_arboles_general_paz = leer_parque(nombre_archivo, 'CENTENARIO')
 #especies_general_paz = especimen_mas_inclinado(lista_arboles_general_paz)
 #print(especies_general_paz)
