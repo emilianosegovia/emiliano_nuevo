@@ -14,8 +14,8 @@ from inline_sql import sql, sql_val
 #%%===========================================================================
 # Importamos los datasets que vamos a utilizar en este programa
 #=============================================================================
-import pandas as pd
-carpeta = "C:\\Users\\segov\\OneDrive\\Escritorio\\Clases 06-08 - SQL\\"
+
+carpeta = ""
 
 # Ejercicios AR-PROJECT, SELECT, RENAME
 empleado       = pd.read_csv(carpeta+"empleado.csv")
@@ -47,49 +47,151 @@ examen03 = pd.read_csv(carpeta+"examen03.csv")
 #%%===========================================================================
 # Ejemplo inicial
 #=============================================================================
-from inline_sql import sql, sql_val
 
+print(empleado)carpeta = ""
+
+# Ejercicios AR-PROJECT, SELECT, RENAME
+empleado       = pd.read_csv(carpeta+"empleado.csv")
+# Ejercicios AR-UNION, INTERSECTION, MINUS
+alumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
+alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")
+# Ejercicios AR-CROSSJOIN
+persona        = pd.read_csv(carpeta+"persona.csv")
+nacionalidades = pd.read_csv(carpeta+"nacionalidades.csv")
+# Ejercicios ¿Mismos Nombres?
+se_inscribe_en=pd.read_csv(carpeta+"se_inscribe_en.csv")
+materia       =pd.read_csv(carpeta+"materia.csv")
+# Ejercicio JOIN múltiples tablas
+vuelo      = pd.read_csv(carpeta+"vuelo.csv")    
+aeropuerto = pd.read_csv(carpeta+"aeropuerto.csv")    
+pasajero   = pd.read_csv(carpeta+"pasajero.csv")    
+reserva    = pd.read_csv(carpeta+"reserva.csv")    
+# Ejercicio JOIN tuplas espúreas
+empleadoRol= pd.read_csv(carpeta+"empleadoRol.csv")    
+rolProyecto= pd.read_csv(carpeta+"rolProyecto.csv")    
+# Ejercicios funciones de agregación, LIKE, Elección, Subqueries 
+# y variables de Python
+examen     = pd.read_csv(carpeta+"examen.csv")
+# Ejercicios de manejo de valores NULL
+examen03 = pd.read_csv(carpeta+"examen03.csv")carpeta = ""
+
+# Ejercicios AR-PROJECT, SELECT, RENAME
+empleado       = pd.read_csv(carpeta+"empleado.csv")
+# Ejercicios AR-UNION, INTERSECTION, MINUS
+alumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
+alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")
+# Ejercicios AR-CROSSJOIN
+persona        = pd.read_csv(carpeta+"persona.csv")
+nacionalidades = pd.read_csv(carpeta+"nacionalidades.csv")
+# Ejercicios ¿Mismos Nombres?
+se_inscribe_en=pd.read_csv(carpeta+"se_inscribe_en.csv")
+materia       =pd.read_csv(carpeta+"materia.csv")
+# Ejercicio JOIN múltiples tablas
+vuelo      = pd.read_csv(carpeta+"vuelo.csv")    
+aeropuerto = pd.read_csv(carpeta+"aeropuerto.csv")    
+pasajero   = pd.read_csv(carpeta+"pasajero.csv")    
+reserva    = pd.read_csv(carpeta+"reserva.csv")    
+# Ejercicio JOIN tuplas espúreas
+empleadoRol= pd.read_csv(carpeta+"empleadoRol.csv")    
+rolProyecto= pd.read_csv(carpeta+"rolProyecto.csv")    
+# Ejercicios funciones de agregación, LIKE, Elección, Subqueries 
+# y variables de Python
+examen     = pd.read_csv(carpeta+"examen.csv")
+# Ejercicios de manejo de valores NULL
+examen03 = pd.read_csv(carpeta+"examen03.csv")
 
 consultaSQL = """
+               SELECT DISTINCT DNI, Salario
+               FROM empleado;
               """
 
 dataframeResultado = sql^ consultaSQL
+carpeta = ""
 
-print(dataframeResultado)
+# Ejercicios AR-PROJECT, SELECT, RENAME
+empleado       = pd.read_csv(carpeta+"empleado.csv")
+# Ejercicios AR-UNION, INTERSECTION, MINUS
+alumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
+alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")
+# Ejercicios AR-CROSSJOIN
+persona        = pd.read_csv(carpeta+"persona.csv")
+nacionalidades = pd.read_csv(carpeta+"nacionalidades.csv")
+# Ejercicios ¿Mismos Nombres?
+se_inscribe_en=pd.read_csv(carpeta+"se_inscribe_en.csv")
+materia       =pd.read_csv(carpeta+"materia.csv")
+# Ejercicio JOIN múltiples tablas
+vuelo      = pd.read_csv(carpeta+"vuelo.csv")    
+aeropuerto = pd.read_csv(carpeta+"aeropuerto.csv")    
+pasajero   = pd.read_csv(carpeta+"pasajero.csv")    
+reserva    = pd.read_csv(carpeta+"reserva.csv")    
+# Ejercicio JOIN tuplas espúreas
+empleadoRol= pd.read_csv(carpeta+"empleadoRol.csv")    
+rolProyecto= pd.read_csv(carpeta+"rolProyecto.csv")    
+# Ejercicios funciones de agregación, LIKE, Elección, Subqueries 
+# y variables de Python
+examen     = pd.read_csv(carpeta+"examen.csv")
+# Ejercicios de manejo de valores NULL
+examen03 = pd.read_csv(carpeta+"examen03.csv")carpeta = ""
+
+# Ejercicios AR-PROJECT, SELECT, RENAME
+empleado       = pd.read_csv(carpeta+"empleado.csv")
+# Ejercicios AR-UNION, INTERSECTION, MINUS
+alumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
+alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")
+# Ejercicios AR-CROSSJOIN
+persona        = pd.read_csv(carpeta+"persona.csv")
+nacionalidades = pd.read_csv(carpeta+"nacionalidades.csv")
+# Ejercicios ¿Mismos Nombres?
+se_inscribe_en=pd.read_csv(carpeta+"se_inscribe_en.csv")
+materia       =pd.read_csv(carpeta+"materia.csv")
+# Ejercicio JOIN múltiples tablas
+vuelo      = pd.read_csv(carpeta+"vuelo.csv")    
+aeropuerto = pd.read_csv(carpeta+"aeropuerto.csv")    
+pasajero   = pd.read_csv(carpeta+"pasajero.csv")    
+reserva    = pd.read_csv(carpeta+"reserva.csv")    
+# Ejercicio JOIN tuplas espúreas
+empleadoRol= pd.read_csv(carpeta+"empleadoRol.csv")    
+rolProyecto= pd.read_csv(carpeta+"rolProyecto.csv")    
+# Ejercicios funciones de agregación, LIKE, Elección, Subqueries 
+# y variables de Python
+examen     = pd.read_csv(carpeta+"examen.csv")
+# Ejercicios de manejo de valores NULL
+examen03 = pd.read_csv(carpeta+"examen03.csv")
+print(dataframeResultadovuelo      = pd.read_csv(carpeta+"vuelo.csv")    
+aeropuerto = pd.read_csv(carpeta+"aeropuerto.csv")    
+pasajero   = pd.read_csv(carpeta+"pasajero.csv")    
+reserva    = pd.read_csv(carpeta+"reserva.csv")    )
 
 
 #%%===========================================================================
-# Ejercicios AR-PROJECT <-> SELECT
+# Ejercicios AR-PROJECT <-> alumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
+alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")SELECT
 #=============================================================================
 # a.- Listar DNI y Salario de empleados 
-from inline_sql import sql, sql_val
 consultaSQL = """
-SELECT DISTINCT DNI, Salario
-FROM empleado;
+
               """
 
 dataframeResultado = sql^ consultaSQL
-print(dataframeResultado)
 
 #%%-----------
 # b.- Listar Sexo de empleados 
 consultaSQL = """
-SELECT DISTINCT Sexo
-FROM empleado;
+
+print(empleado)
+
               """
 
-dataframeResultado = sql^ consultaSQL
-print(dataframeResultado)
+dataframeResultado = sql^ coalumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
+alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")nsultaSQL
 
 #%%-----------
 #c.- Listar Sexo de empleados (sin DISTINCT)
 consultaSQL = """
-SELECT Sexo
-FROM empleado;
+
               """
 
 dataframeResultado = sql^ consultaSQL
-print(dataframeResultado)
 
 #%%===========================================================================
 # Ejercicios AR-SELECT <-> WHERE
@@ -97,35 +199,40 @@ print(dataframeResultado)
 # a.- Listar de EMPLEADO sólo aquellos cuyo sexo es femenino
 consultaSQL = """
 SELECT DISTINCT *
-FROM empleado
-WHERE Sexo='F'
+FROM alumnos_BD
+UNION
+SELECT DISTINCT *
+FROM alumnos_TLeng;
               """
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
 
-#%% -----------
+vuelo      = pd.read_csv(carpeta+"vuelo.csv")    
+aeropuerto = pd.read_csv(carpeta+"aeropuerto.csv")    
+pasajero   = pd.read_csv(carpeta+"pasajero.csv")    
+reserva    = pd.read_csv(carpeta+"reserva.csv")    
+dataframeResultado = sql^ consultaSQL
+
+#%% -----------empleadoRol= pd.read_csv(carpeta+"empleadoRol.csv")    
+rolProyecto= pd.read_csv(carpeta+"rolProyecto.csv")   
 #b.- Listar de EMPLEADO aquellos cuyo sexo es femenino y su salario es mayor a $15.000
 consultaSQL = """
-SELECT DISTINCT *
-FROM empleado
-WHERE Sexo = 'F' AND Salario>15000
+
               """
 
 dataframeResultado = sql^ consultaSQL
-print(dataframeResultado)
 
 #%%===========================================================================
 # Ejercicios AR-RENAME <-> AS
 #=============================================================================
 #a.- Listar DNI y Salario de EMPLEADO, y renombrarlos como id e Ingreso
 consultaSQL = """
-SELECT DISTINCT DNI AS id, Salario as Ingreso
-FROM empleado
+
               """
 
 dataframeResultado = sql^ consultaSQL
-print(dataframeResultado)
+
 
 #%% # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -143,10 +250,9 @@ print(dataframeResultado)
 # EJERCICIOS PARA REALIZAR DE MANERA INDIVIDUAL --> EJERCICIO Nro. 01
 #=============================================================================
 # Ejercicio 01.1.- Retornar Codigo y Nombre de los aeropuertos de Londres
-consultaSQL = """
-SELECT DISTINCT Codigo,Nombre
-FROM aeropuerto
-              """
+consultaSQL = """   SELECT DISTINCT Codigo,Nombre 
+                    FROM aeropuerto 
+                """
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
@@ -156,44 +262,46 @@ print(dataframeResultado)
 #                       FROM aeropuerto 
 #                       WHERE Codigo='ORY' OR Codigo='CDG'; ?
 consultaSQL = """
-SELECT DISTINCT Ciudad AS City 
-                       FROM aeropuerto 
-                       WHERE Codigo='ORY' OR Codigo='CDG';
+SELECT DISTINCT Ciudad AS City
+FROM aeropuerto
+WHERE Codigo='ORY' OR Codigo='CDG';
               """
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
-
 #%% -----------
 # Ejercicio 01.3.- Obtener los números de vuelo que van desde CDG hacia LHR
 consultaSQL = """
-SELECT DISTINCT Numero
+SELECT DISTINCT numero
 FROM vuelo
 WHERE Origen='CDG' AND Destino='LHR'
               """
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
+
 #%% -----------
 # Ejercicio 01.4.- Obtener los números de vuelo que van desde CDG hacia LHR o viceversa
 consultaSQL = """
-SELECT DISTINCT Numero
+SELECT DISTINCT numero
 FROM vuelo
-WHERE Origen='CDG' AND Destino='LHR' OR Origen='LHR' AND Destino='CDG'
+WHERE Origen='CDG' AND Destino='LHR' or Origen='LHR' and Destino='CDG'
               """
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
+
 #%% -----------
 # Ejercicio 01.5.- Devolver las fechas de reservas cuyos precios son mayores a $200
-consultaSQL = """
-SELECT DISTINCT Fecha
+consultaSQL = """SELECT DISTINCT Fecha
 FROM reserva
-where Precio>200
-              """
+WHERE precio>200
+"""
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
+
+
 #%% # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -210,37 +318,49 @@ print(dataframeResultado)
 # a1.- Listar a los alumnos que cursan BDs o TLENG
 
 consultaSQL = """
-SELECT DISTINCT *
- FROM alumnosBD
-UNION
- SELECT DISTINCT *
- FROM alumnosTLeng;
+SELECT DISTINCT NroVuelo
+FROM reserva
+INTERSECT
+SELECT DISTINCT Numero
+FROM vuelo;
               """
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
+
+
 #%% -----------
 # a2.- Listar a los alumnos que cursan BDs o TLENG (usando UNION ALL)
 
 consultaSQL = """
 SELECT DISTINCT *
- FROM alumnosBD
+FROM alumnos_BD
 UNION ALL
- SELECT DISTINCT *
- FROM alumnosTLeng;
+SELECT DISTINCT *
+FROM alumnos_TLeng;
               """
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
+
 #%% -----------
 # b.- Listar a los alumnos que cursan simultáneamente BDs y TLENG
 
 consultaSQL = """
 SELECT DISTINCT *
- FROM alumnosBD
+FROM alumnos_BD
+UNION ALL
+SELECT DISTINCT *
+FROM alumnos_TLeng;
+              """
+
+dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
+"""SELECT DISTINCT *
+FROM alumnos_BD
 INTERSECT
- SELECT DISTINCT *
- FROM alumnosTLeng;
+SELECT DISTINCT *
+FROM alumnos_TLeng;
               """
 
 dataframeResultado = sql^ consultaSQL
@@ -250,10 +370,10 @@ print(dataframeResultado)
 
 consultaSQL = """
 SELECT DISTINCT *
- FROM alumnosBD
+FROM alumnosBD
 EXCEPT
- SELECT DISTINCT *
- FROM alumnosTLeng;
+SELECT DISTINCT *
+FROM alumnosTLeng;
               """
 
 dataframeResultado = sql^ consultaSQL
@@ -275,27 +395,30 @@ print(dataframeResultado)
 #=============================================================================
 # Ejercicio 02.1.- Devolver los números de vuelo que tienen reservas generadas (utilizar intersección)
 consultaSQL = """
-SELECT DISTINCT NroVuelo 
+SELECT DISTINCT NroVuelo
 FROM reserva
 INTERSECT
 SELECT DISTINCT Numero
-FROM vuelo
+FROM vuelo;
               """
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
+
+
 #%%-----------
 # Ejercicio 02.2.- Devolver los números de vuelo que aún no tienen reservas
 consultaSQL = """
 SELECT DISTINCT Numero
 FROM vuelo
 EXCEPT
-SELECT DISTINCT NroVuelo 
-FROM reserva
-              """
+SELECT DISTINCT NroVuelo
+FROM reserva;
+"""
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
+
 #%%-----------
 # Ejercicio 02.3.- Retornar los códigos de aeropuerto de los que parten o arriban los vuelos
 consultaSQL = """
@@ -304,13 +427,15 @@ FROM vuelo
 UNION
 SELECT DISTINCT Destino
 FROM vuelo
-INTERSECT 
+INTERSECT
 SELECT DISTINCT Codigo
-FROM aeropuerto 
+FROM aeropuerto;
               """
               
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
+
+
 #%% # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -331,8 +456,10 @@ SELECT DISTINCT *
 FROM persona
 CROSS JOIN nacionalidades;
               """
+
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
+
 #%%-----------
 # a2.- Listar el producto cartesiano entre las tablas persona y nacionalidades (sin usar CROSS JOIN)
 
@@ -343,6 +470,7 @@ FROM persona,nacionalidades
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
+
 #%% --------------------------------------------------------------------------------------------
 # Carga los nuevos datos del dataframe persona para los ejercicios de AR-INNER y LEFT OUTER JOIN
 # ----------------------------------------------------------------------------------------------
@@ -360,7 +488,6 @@ ON Nacionalidad=IDN
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
 #%%-----------
-persona        = pd.read_csv(carpeta+"persona_ejemplosJoin.csv")
 # b2.- Vincular las tablas persona y nacionalidades (sin usar INNER JOIN)
 
 consultaSQL = """
@@ -394,15 +521,24 @@ FROM se_inscribe_en
 INNER JOIN materia
 ON se_inscribe_en.Codigo_materia=materia.Codigo_materia
               """
-#preguntar si esta bien
+
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
+    
 #%% # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
  # #                                                                     # #
 # #    INICIO -->           EJERCICIO Nro. 03                             # #
- # #                                                                     # # 
+ # #                            consultaSQL = """
+consultaSQL="""SELECT DISTINCT *
+FROM persona
+LEFT OUTER JOIN nacionalidades
+ON Nacionalidad=IDN;
+              """
+
+dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)                                         # # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
 # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # #
@@ -437,21 +573,54 @@ dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
 #%%-----------
 # Ejercicio 03.3.- Obtener Nombre, Fecha y Destino del Viaje de todos los pasajeros que vuelan desde Madrid
-
-vuelosAMadrid = sql^"""
-
+consultaSQL="""
+SELECT DISTINCT pasajero.Nombre
+FROM aeropuerto
+INNER JOIN vuelo
+ON Codigo=Origen AND Ciudad='Madrid'
+INNER JOIN reserva
+ON Numero=NroVuelo
+INNER JOIN pasajero
+ON reserva.DNI=pasajero.DNI
               """
+#otra formaconsultaSQL = """
+SELECT Instancia, AVG(Edad) as promedioEdad
+FROM examen
+GROUP BY Instancia
+ORDER BY Instancia
+"""
 
-dniPersonasDesdeMadrid = sql^"""
-
-              """
-
-consultaSQL = """
-
+dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
+vuelosAMadrid=sql^"""
+SELECT vuelo.Numero,vuelo.Destino
+FROM vuelo
+INNER JOIN aeropuerto
+ON vuelo.Origen=aeropuerto.Codigo
+WHERE aeropuerto.Ciudad='Madrid';
+"""
+#dniPersonas="""
+#SELECT DISTINCT DNI,"""
+consultaSQL="""
+SELECT DISTINCT Fecha
+FROM aeropuerto
+INNER JOIN vuelo
+ON Codigo=Origen AND Ciudad='Madrid'
+INNER JOIN reserva
+ON Numero=NroVuelo
               """
 
 dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
+consultaSQL = """
+SELECT DISTINCT Destino
+FROM aeropuerto
+INNER JOIN vuelo
+ON Codigo=Origen AND Ciudad='Madrid'
+              """
 
+dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
 
 #%% # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
  # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # # 
@@ -470,11 +639,16 @@ dataframeResultado = sql^ consultaSQL
 # a.- Vincular las tablas Reserva, Pasajero y Vuelo. Mostrar sólo Fecha de reserva, hora de salida del vuelo y nombre de pasajero.
     
 consultaSQL = """
-
-              """
+SELECT DISTINCT Fecha,Salida,Nombre
+FROM vuelo
+INNER JOIN reserva
+ON Numero=NroVuelo
+INNER JOIN pasajero
+ON pasajero.DNI=reserva.DNI
+"""
 
 dataframeResultado = sql^ consultaSQL
-
+print(dataframeResultado)
     
 #%%===========================================================================
 # Ejercicios SQL - Tuplas espúreas
@@ -482,10 +656,14 @@ dataframeResultado = sql^ consultaSQL
 # a.- Vincular (JOIN)  EmpleadoRol y RolProyecto para obtener la tabla original EmpleadoRolProyecto
     
 consultaSQL = """
-
+SELECT DISTINCT er.empleado, er.rol, rp.proyecto
+FROM empleadoRol AS er
+INNER JOIN rolProyecto rp
+ON er.rol=rp.rol;
               """
 
 dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
 
 #%%===========================================================================
 # Ejercicios SQL - Funciones de agregación
@@ -493,27 +671,33 @@ dataframeResultado = sql^ consultaSQL
 # a.- Usando sólo SELECT contar cuántos exámenes fueron rendidos (en total)
     
 consultaSQL = """
-
+SELECT count(*) AS cantidadExamenes
+FROM examen;
               """
 
 dataframeResultado = sql^ consultaSQL
-
+print(dataframeResultado)
 
 #%%-----------
 # b1.- Usando sólo SELECT contar cuántos exámenes fueron rendidos en cada Instancia
     
 consultaSQL = """
-
+SELECT Instancia, COUNT(*) AS Asistieron
+FROM examen
+GROUP BY Instancia;
               """
 
 dataframeResultado = sql^ consultaSQL
-
+print(dataframeResultado)
 
 #%%-----------
 # b2.- Usando sólo SELECT contar cuántos exámenes fueron rendidos en cada Instancia (ordenado por instancia)
     
 consultaSQL = """
-
+SELECT Instancia, COUNT(*) AS Asistieron
+FROM Examen
+GROUP BY Instancia
+ORDER BY Instancia;
               """
 
 dataframeResultado = sql^ consultaSQL
@@ -523,21 +707,29 @@ dataframeResultado = sql^ consultaSQL
 # b3.- Ídem ejercicio anterior, pero mostrar sólo las instancias a las que asistieron menos de 4 Estudiantes
     
 consultaSQL = """
-
+SELECT Instancia, COUNT(*) AS Asistieron
+FROM examen
+GROUP BY Instancia
+HAVING Asistieron < 4
+ORDER BY Instancia;
               """
+dataframeResultado=sql^consultaSQL
+print(dataframeResultado)
 
 dataframeResultado = sql^ consultaSQL
-
+print(dataframeResultado)
 #%%-----------
 # c.- Mostrar el promedio de edad de los estudiantes en cada instancia de examen
     
 consultaSQL = """
-
-              """
+SELECT Instancia, AVG(Edad) as promedioEdad
+FROM examen
+GROUP BY Instancia
+ORDER BY Instancia
+"""
 
 dataframeResultado = sql^ consultaSQL
-
-
+print(dataframeResultado)
 #%%===========================================================================
 # Ejercicios SQL - LIKE")
 #=============================================================================
@@ -557,7 +749,6 @@ consultaSQL = """
               """
 
 dataframeResultado = sql^ consultaSQL
-
 
 #%%===========================================================================
 # Ejercicios SQL - Eligiendo
