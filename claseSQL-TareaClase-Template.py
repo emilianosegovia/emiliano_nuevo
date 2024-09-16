@@ -736,74 +736,136 @@ print(dataframeResultado)
 # a1.- Mostrar cuál fue el promedio de notas en cada instancia de examen, sólo para instancias de parcial.
     
 consultaSQL = """
-
+SELECT Instancia,AVG(Nota) as promedioNota
+FROM examen
+WHERE Instancia='Parcial-01' OR Instancia='Parcial-02'
+GROUP BY Instancia
+ORDER BY Instancia
               """
 
 dataframeResultado = sql^ consultaSQL
-
+print(dataframeResultado)
 #%%-----------
 # a2.- Mostrar cuál fue el promedio de notas en cada instancia de examen, sólo para instancias de parcial. Esta vez usando LIKE.
     
 consultaSQL = """
-
+SELECT Instancia,AVG(Nota) AS promedioNota
+FROM examen
+GROUP BY Instancia
+HAVING Instancia LIKE 'Parcial%'
+ORDER BY Instancia
               """
 
-dataframeResultado = sql^ consultaSQL
-
+dataframeResultado = sql^ consultaSQL               #preguntar
+print(dataframeResultado)
 #%%===========================================================================
 # Ejercicios SQL - Eligiendo
 #=============================================================================
 # a1.- Listar a cada alumno que rindió el Parcial-01 y decir si aprobó o no (se aprueba con nota >=4).
     
 consultaSQL = """
-
+SELECT Nombre,
+Nota,
+CASE WHEN nota>=4
+THEN 'APROBO'
+ELSE 'NO APROBO'
+END AS EstadoconsultaSQL = """
+SELECT DISTINCT er.empleado, er.rol, rp.proyecto
+FROM empleadoRol AS er
+INNER JOIN rolProyecto rp
+ON er.rol=rp.rol;
               """
 
 dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
+              """
 
-
+dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
 #%%-----------
 # a2.- Modificar la consulta anterior para que informe cuántos estudiantes aprobaron/reprobaron en cada instancia.
     
 consultaSQL = """
-
+SELECT Instancia,
+CASE WHEN Nota>=4
+THEN 'APROBO'
+ELSE 'NO APROBO'
+END AS Estado,
+COUNT (*) AS Cantidad
+FROM examen
+GROUP BY Instancia,Estado
+ORDER BY Instancia,Estado
               """
 
 dataframeResultado = sql^ consultaSQL
-
-
+print(dataframeResultado)
 #%%===========================================================================
 # Ejercicios SQL - Subqueries
 #=============================================================================
 #a.- Listar los alumnos que en cada instancia obtuvieron una nota mayor al promedio de dicha instancia
-
 consultaSQL = """
-
+SELECT Nombre,Instancia,Nota
+FROM examen AS E1
+WHERE Nota>(SELECT AVG(Nota) FROM examen AS E2 WHERE E1.Instancia=E2.Instancia )
+ORDER BY Instancia ASC, Nota DESC;
               """
 
-
 dataframeResultado = sql^ consultaSQL
-
-
+print(dataframeResultado)
 #%%-----------
 # b.- Listar los alumnos que en cada instancia obtuvieron la mayor nota de dicha instancia
 
 consultaSQL = """
-
+SELECT Nombre, Instancia,Nota
+FROM examen AS E1
+WHERE Nota>=(SELECT MAX(Nota) FROM examen AS E2 WHERE E1.Instancia=E2.Instancia)
+ORDER BY Instancia ASC,NOTA DESC;
               """
 
 dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
+#otra forma
+consultaSQL="""SELECT e1.Nombre, e1.Instancia, e1.Nota
+FROM examen AS e1
+WHERE e1.Nota >= ALL (
+SELECT e2.Nota
+FROM examen AS e2
+WHERE e2.Instancia = e1.Instancia
+)
+ORDER BY e1.Instancia ASC;"""
 
-
+dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
 #%%-----------
 # c.- Listar el nombre, instancia y nota sólo de los estudiantes que no rindieron ningún Recuperatorio
 
-consultaSQL = """
-
-              """
+#consultaSQL = """
+#SELECT e1.Nombre,e1.Instancia,e1.NSELECT empleado, UPPER(rol) AS rol
+FROM EmpleadoRol;ota
+#FROM examen AS e1
+#WHERE e1.Instancia NOT EXISTS(SELECT e2.Instancia
+#FROM examen AS e2
+#WHERE e2.Instancia LIKE 'recuperatorio'
+#ORDER BY e1.Instancia ASC;"""
+consultaSQL="""SELECT e1.Nombre, e1.Instancia, e1.Nota
+FROM examen AS e1
+WHERE NOT EXISTS (
+SELECT *
+FROM examen AS e2
+WHERE e2.Nombre = e1.Nombre AND e2.Instancia LIKE 'Recuperatorio%’)
+ORDER BY e1.Nombre ASC, e1.Instancia ASC;"""
 
 dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
 
+
+consultaSQL="""SELECT e1.Nombre,e1.Instancia,e1.Nota
+FROM examen AS e1
+WHERE e1.Nombre NOT IN(SELECT e2.nombre
+FROM examen AS e2
+WHERE e2.Instancia LIKE 'Recuperatorio%')"""
+dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
 
 #%%===========================================================================
 # Ejercicios SQL - Integrando variables de Python
@@ -825,16 +887,20 @@ dataframeResultado = sql^ consultaSQL
 # a.- Listar todas las tuplas de Examen03 cuyas Notas son menores a 9
 
 consultaSQL = """
-
+SELECT *
+FROM examen03
+WHERE Nota<9
               """
 
 dataframeResultado = sql^ consultaSQL
-
+print(dataframeResultado)
 #%%-----------
 # b.- Listar todas las tuplas de Examen03 cuyas Notas son mayores o iguales a 9
 
 consultaSQL = """
-
+SELECT *
+FROM examen03
+WHERE Nota>=9
               """
 
 
@@ -845,64 +911,61 @@ dataframeResultado = sql^ consultaSQL
 # c.- Listar el UNION de todas las tuplas de Examen03 cuyas Notas son menores a 9 y las que son mayores o iguales a 9
 
 consultaSQL = """
-
+SELECT *
+FROM examen03
+WHERE Nota<9
+UNION
+SELECT *
+FROM examen03
+WHERE Nota>=9
               """
 
 
 dataframeResultado = sql^ consultaSQL
-
-
+print(dataframeResultado)
 #%%-----------
 # d1.- Obtener el promedio de notas
 
 consultaSQL = """
-
+SELECT AVG(Nota) AS NotaPromedio
+FROM examen03;
               """
 
 
 dataframeResultado = sql^ consultaSQL
-
-
+print(dataframeResultado)
 #%%-----------
 # d2.- Obtener el promedio de notas (tomando a NULL==0)
 
 consultaSQL = """
-
+SELECT AVG(CASE WHEN Nota IS NULL THEN 0 ELSE Nota END) AS NotaPromedio
+FROM examen03;
               """
 
 
 dataframeResultado = sql^ consultaSQL
-
+print(dataframeResultado)
 #%%===========================================================================
 # Ejercicios SQL - Mayúsculas/Minúsculas
 #=============================================================================
 # a.- Consigna: Transformar todos los caracteres de las descripciones de los roles a mayúscula
 
 consultaSQL = """
-
+SELECT empleado, UPPER(rol) AS rol
+FROM empleadoRol;
               """
 
 dataframeResultado = sql^ consultaSQL
-
+print(dataframeResultado)
 #%%-----------
 # b.- Consigna: Transformar todos los caracteres de las descripciones de los roles a minúscula
 
 consultaSQL = """
-
+SELECT empleado, LOWER(rol) AS rol
+FROM empleadoRol;
               """
-
-dataframeResultado = sql^ consultaSQL
-
-
-
-
-#%%===========================================================================
-# Ejercicios SQL - Reemplazos
-#=============================================================================
-# a.- Consigna: En la descripción de los roles de los empleados reemplazar las ñ por ni
-
-consultaSQL = """
-
+consultaSQL="""SELECT empleado, REPLACE(rol,'ñ','ni') AS rol
+FROM empleadoRol;
               """
 
 dataframeResultado = sql^ consultaSQL
@@ -913,13 +976,14 @@ dataframeResultado = sql^ consultaSQL
 #=============================================================================
 # a.- Mostrar para cada estudiante las siguientes columnas con sus datos: Nombre, Sexo, Edad, Nota-Parcial-01, Nota-Parcial-02, Recuperatorio-01 y , Recuperatorio-02
 
-# ... Paso 1: Obtenemos los datos de los estudiantes
+# ... Paso 1: Obtenemos los datos de los estudiantesconsultaSQL = """
 consultaSQL = """
-
+SELECT Nombre,Sexo,Edad
+FROM EXAMEN
+INNER JOIN ()
               """
-
-
-desafio_01 = consultaSQL
+dataframeResultado = sql^ consultaSQL
+print(dataframeResultado)
 
 
 
