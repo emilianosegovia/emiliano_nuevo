@@ -15,7 +15,8 @@ from inline_sql import sql, sql_val
 # Importamos los datasets que vamos a utilizar en este programa
 #=============================================================================
 
-carpeta = ""
+carpeta =  "C:\\Users\\segov\\OneDrive\\Escritorio\\clase\\"
+
 
 # Ejercicios AR-PROJECT, SELECT, RENAME
 empleado       = pd.read_csv(carpeta+"empleado.csv")
@@ -44,128 +45,12 @@ examen03 = pd.read_csv(carpeta+"examen03.csv")
 
 
 
-#%%===========================================================================
-# Ejemplo inicial
-#=============================================================================
 
-print(empleado)carpeta = ""
-
-# Ejercicios AR-PROJECT, SELECT, RENAME
-empleado       = pd.read_csv(carpeta+"empleado.csv")
-# Ejercicios AR-UNION, INTERSECTION, MINUS
-alumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
-alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")
-# Ejercicios AR-CROSSJOIN
-persona        = pd.read_csv(carpeta+"persona.csv")
-nacionalidades = pd.read_csv(carpeta+"nacionalidades.csv")
-# Ejercicios ¿Mismos Nombres?
-se_inscribe_en=pd.read_csv(carpeta+"se_inscribe_en.csv")
-materia       =pd.read_csv(carpeta+"materia.csv")
-# Ejercicio JOIN múltiples tablas
-vuelo      = pd.read_csv(carpeta+"vuelo.csv")    
-aeropuerto = pd.read_csv(carpeta+"aeropuerto.csv")    
-pasajero   = pd.read_csv(carpeta+"pasajero.csv")    
-reserva    = pd.read_csv(carpeta+"reserva.csv")    
-# Ejercicio JOIN tuplas espúreas
-empleadoRol= pd.read_csv(carpeta+"empleadoRol.csv")    
-rolProyecto= pd.read_csv(carpeta+"rolProyecto.csv")    
-# Ejercicios funciones de agregación, LIKE, Elección, Subqueries 
-# y variables de Python
-examen     = pd.read_csv(carpeta+"examen.csv")
-# Ejercicios de manejo de valores NULL
-examen03 = pd.read_csv(carpeta+"examen03.csv")carpeta = ""
-
-# Ejercicios AR-PROJECT, SELECT, RENAME
-empleado       = pd.read_csv(carpeta+"empleado.csv")
-# Ejercicios AR-UNION, INTERSECTION, MINUS
-alumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
-alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")
-# Ejercicios AR-CROSSJOIN
-persona        = pd.read_csv(carpeta+"persona.csv")
-nacionalidades = pd.read_csv(carpeta+"nacionalidades.csv")
-# Ejercicios ¿Mismos Nombres?
-se_inscribe_en=pd.read_csv(carpeta+"se_inscribe_en.csv")
-materia       =pd.read_csv(carpeta+"materia.csv")
-# Ejercicio JOIN múltiples tablas
-vuelo      = pd.read_csv(carpeta+"vuelo.csv")    
-aeropuerto = pd.read_csv(carpeta+"aeropuerto.csv")    
-pasajero   = pd.read_csv(carpeta+"pasajero.csv")    
-reserva    = pd.read_csv(carpeta+"reserva.csv")    
-# Ejercicio JOIN tuplas espúreas
-empleadoRol= pd.read_csv(carpeta+"empleadoRol.csv")    
-rolProyecto= pd.read_csv(carpeta+"rolProyecto.csv")    
-# Ejercicios funciones de agregación, LIKE, Elección, Subqueries 
-# y variables de Python
-examen     = pd.read_csv(carpeta+"examen.csv")
-# Ejercicios de manejo de valores NULL
-examen03 = pd.read_csv(carpeta+"examen03.csv")
-
-consultaSQL = """
-               SELECT DISTINCT DNI, Salario
-               FROM empleado;
-              """
-
-dataframeResultado = sql^ consultaSQL
-carpeta = ""
-
-# Ejercicios AR-PROJECT, SELECT, RENAME
-empleado       = pd.read_csv(carpeta+"empleado.csv")
-# Ejercicios AR-UNION, INTERSECTION, MINUS
-alumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
-alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")
-# Ejercicios AR-CROSSJOIN
-persona        = pd.read_csv(carpeta+"persona.csv")
-nacionalidades = pd.read_csv(carpeta+"nacionalidades.csv")
-# Ejercicios ¿Mismos Nombres?
-se_inscribe_en=pd.read_csv(carpeta+"se_inscribe_en.csv")
-materia       =pd.read_csv(carpeta+"materia.csv")
-# Ejercicio JOIN múltiples tablas
-vuelo      = pd.read_csv(carpeta+"vuelo.csv")    
-aeropuerto = pd.read_csv(carpeta+"aeropuerto.csv")    
-pasajero   = pd.read_csv(carpeta+"pasajero.csv")    
-reserva    = pd.read_csv(carpeta+"reserva.csv")    
-# Ejercicio JOIN tuplas espúreas
-empleadoRol= pd.read_csv(carpeta+"empleadoRol.csv")    
-rolProyecto= pd.read_csv(carpeta+"rolProyecto.csv")    
-# Ejercicios funciones de agregación, LIKE, Elección, Subqueries 
-# y variables de Python
-examen     = pd.read_csv(carpeta+"examen.csv")
-# Ejercicios de manejo de valores NULL
-examen03 = pd.read_csv(carpeta+"examen03.csv")carpeta = ""
-
-# Ejercicios AR-PROJECT, SELECT, RENAME
-empleado       = pd.read_csv(carpeta+"empleado.csv")
-# Ejercicios AR-UNION, INTERSECTION, MINUS
-alumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
-alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")
-# Ejercicios AR-CROSSJOIN
-persona        = pd.read_csv(carpeta+"persona.csv")
-nacionalidades = pd.read_csv(carpeta+"nacionalidades.csv")
-# Ejercicios ¿Mismos Nombres?
-se_inscribe_en=pd.read_csv(carpeta+"se_inscribe_en.csv")
-materia       =pd.read_csv(carpeta+"materia.csv")
-# Ejercicio JOIN múltiples tablas
-vuelo      = pd.read_csv(carpeta+"vuelo.csv")    
-aeropuerto = pd.read_csv(carpeta+"aeropuerto.csv")    
-pasajero   = pd.read_csv(carpeta+"pasajero.csv")    
-reserva    = pd.read_csv(carpeta+"reserva.csv")    
-# Ejercicio JOIN tuplas espúreas
-empleadoRol= pd.read_csv(carpeta+"empleadoRol.csv")    
-rolProyecto= pd.read_csv(carpeta+"rolProyecto.csv")    
-# Ejercicios funciones de agregación, LIKE, Elección, Subqueries 
-# y variables de Python
-examen     = pd.read_csv(carpeta+"examen.csv")
-# Ejercicios de manejo de valores NULL
-examen03 = pd.read_csv(carpeta+"examen03.csv")
-print(dataframeResultadovuelo      = pd.read_csv(carpeta+"vuelo.csv")    
-aeropuerto = pd.read_csv(carpeta+"aeropuerto.csv")    
-pasajero   = pd.read_csv(carpeta+"pasajero.csv")    
-reserva    = pd.read_csv(carpeta+"reserva.csv")    )
 
 
 #%%===========================================================================
 # Ejercicios AR-PROJECT <-> alumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
-alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")SELECT
+alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")
 #=============================================================================
 # a.- Listar DNI y Salario de empleados 
 consultaSQL = """
@@ -182,8 +67,9 @@ print(empleado)
 
               """
 
-dataframeResultado = sql^ coalumnosBD      = pd.read_csv(carpeta+"alumnosBD.csv")
-alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")nsultaSQL
+   
+alumnosBD=pd.read_csv(carpeta+"alumnosBD.csv")
+alumnosTLeng   = pd.read_csv(carpeta+"alumnosTLeng.csv")
 
 #%%-----------
 #c.- Listar Sexo de empleados (sin DISTINCT)
@@ -199,10 +85,10 @@ dataframeResultado = sql^ consultaSQL
 # a.- Listar de EMPLEADO sólo aquellos cuyo sexo es femenino
 consultaSQL = """
 SELECT DISTINCT *
-FROM alumnos_BD
+FROM alumnosBD
 UNION
 SELECT DISTINCT *
-FROM alumnos_TLeng;
+FROM alumnosTLeng;
               """
 
 dataframeResultado = sql^ consultaSQL
@@ -583,7 +469,7 @@ ON Numero=NroVuelo
 INNER JOIN pasajero
 ON reserva.DNI=pasajero.DNI
               """
-#otra formaconsultaSQL = """
+consultaSQL = """
 SELECT Instancia, AVG(Edad) as promedioEdad
 FROM examen
 GROUP BY Instancia
@@ -769,16 +655,15 @@ Nota,
 CASE WHEN nota>=4
 THEN 'APROBO'
 ELSE 'NO APROBO'
-END AS EstadoconsultaSQL = """
+END AS EstadoconsultaSQL = 
 SELECT DISTINCT er.empleado, er.rol, rp.proyecto
 FROM empleadoRol AS er
 INNER JOIN rolProyecto rp
-ON er.rol=rp.rol;
-              """
+ON er.rol=rp.rol;"""
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
-              """
+              
 
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
@@ -841,7 +726,7 @@ print(dataframeResultado)
 
 #consultaSQL = """
 #SELECT e1.Nombre,e1.Instancia,e1.NSELECT empleado, UPPER(rol) AS rol
-FROM EmpleadoRol;ota
+
 #FROM examen AS e1
 #WHERE e1.Instancia NOT EXISTS(SELECT e2.Instancia
 #FROM examen AS e2
@@ -978,10 +863,16 @@ dataframeResultado = sql^ consultaSQL
 
 # ... Paso 1: Obtenemos los datos de los estudiantesconsultaSQL = """
 consultaSQL = """
-SELECT Nombre,Sexo,Edad
-FROM EXAMEN
-INNER JOIN ()
-              """
+SELECT Nombre,Sexo,Edad,
+MAX(CASE WHEN Instancia='Parcial-01' THEN Nota END) AS Parcial_01,
+MAX(CASE WHEN Instancia ='Parcial-02' THEN Nota END) AS Parcial_02,
+MAX(CASE WHEN Instancia = 'Recuperatorio-01' THEN Nota END) AS Recuperatorio_01,
+MAX(CASE WHEN Instancia = 'Recuperatorio-02' THEN Nota END) AS Recuperatorio_02
+FROM examen
+GROUP BY Nombre,Sexo,Edad
+ORDER BY Nombre;
+"""
+#USO MAX PORQUE SINO SE ME LLENA DE NULLS,COMO EN CADA INSTANCIA DE PARCIAL HAY UN SOLO NOMBRE,ENTONCES,USO MAX.
 dataframeResultado = sql^ consultaSQL
 print(dataframeResultado)
 
@@ -990,14 +881,23 @@ print(dataframeResultado)
 #%% -----------
 # b.- Agregar al ejercicio anterior la columna Estado, que informa si el alumno aprobó la cursada (APROBÓ/NO APROBÓ). Se aprueba con 4.
 
-consultaSQL = """
-                 
-              """
+consultaSQL="""
+SELECT Nombre,Sexo,Edad,
+MAX(CASE WHEN Instancia='Parcial-01' THEN Nota END) AS Parcial_01,
+MAX(CASE WHEN Instancia ='Parcial-02' THEN Nota END) AS Parcial_02,
+MAX(CASE WHEN Instancia = 'Recuperatorio-01' THEN Nota END) AS Recuperatorio_01,
+MAX(CASE WHEN Instancia = 'Recuperatorio-02' THEN Nota END) AS Recuperatorio_02,
+MAX(CASE WHEN Nota>=4 AND (Instancia='Parcial-01' OR Instancia='Parcial-02' THEN  'APROBO')
+ 
+END) AS Estado
+
+FROM examen
+GROUP BY Nombre,Sexo,Edad
+ORDER BY Nombre;
+"""
 
 desafio_02 = sql^ consultaSQL
-
-
-
+print(desafio_02)
 #%% -----------
 # c.- Generar la tabla Examen a partir de la tabla obtenida en el desafío anterior.
 
